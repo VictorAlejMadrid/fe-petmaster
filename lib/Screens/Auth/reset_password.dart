@@ -3,8 +3,8 @@ import 'package:fe_petmaster/Components/Auth/input.dart';
 import 'package:fe_petmaster/Components/Auth/logo.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Login extends StatelessWidget {
               Logo(),
               SizedBox(height: 32),
               Text(
-                "LOGIN",
+                "RESETAR SENHA",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
@@ -31,30 +31,15 @@ class Login extends StatelessWidget {
                 label: "Matrícula",
                 hint: "digite seu número de matrícula",
               ),
-              SizedBox(height: 16.0),
-              AuthInputText(label: "Senha", hint: "digite sua senha"),
-              SizedBox(height: 8.0),
-              Container(
-                constraints: BoxConstraints.expand(height: 24.0),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, "/resetPassword");
-                  },
-                  child: Text(
-                    "Esqueci minha senha",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
-                  ),
-                ),
-              ),
-              SizedBox(height: 24.0),
-              AuthButton(text: "ENTRAR", onPressed: () {}),
+              SizedBox(height: 42.0),
+              AuthButton(text: "RESETAR SENHA", onPressed: () {}),
               SizedBox(height: 8.0),
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, "/firstAccess"),
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Text(
-                  "Não tenho conta",
-                  textAlign: TextAlign.right,
+                  "Voltar para o login",
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
