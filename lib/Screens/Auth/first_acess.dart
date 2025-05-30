@@ -1,0 +1,58 @@
+import 'package:fe_petmaster/Components/Auth/button.dart';
+import 'package:fe_petmaster/Components/Auth/input.dart';
+import 'package:fe_petmaster/Components/Auth/logo.dart';
+import 'package:flutter/material.dart';
+
+class FirstAcess extends StatelessWidget {
+  const FirstAcess({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(color: const Color(0xFF0F3956)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Logo(),
+              Text(
+                "PRIMEIRO ACESSO",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 28.0,
+                ),
+              ),
+              SizedBox(height: 12.0),
+              AuthInputText(
+                label: 'Matrícula',
+                hint: 'digite seu número de matrícula',
+              ),
+              SizedBox(height: 16.0),
+              AuthInputText(label: 'Nova senha', hint: 'digite sua nova senha'),
+              SizedBox(height: 16.0),
+              AuthInputText(
+                label: 'Confirmar Senha',
+                hint: 'digite novamente sua senha',
+              ),
+              SizedBox(height: 40.0),
+              AuthButton(text: 'ATUALIZAR SENHA', onPressed: () {}),
+              SizedBox(height: 10.0),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  "Voltar para o login",
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
