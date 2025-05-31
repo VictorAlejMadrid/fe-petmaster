@@ -1,6 +1,9 @@
 import 'package:fe_petmaster/Screens/Auth/first_acess.dart';
 import 'package:fe_petmaster/Screens/Auth/login.dart';
 import 'package:fe_petmaster/Screens/Auth/reset_password.dart';
+import 'package:fe_petmaster/Screens/pets.dart';
+import 'package:fe_petmaster/Screens/products.dart';
+import 'package:fe_petmaster/Screens/users.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,6 +22,10 @@ class MyApp extends StatelessWidget {
       routes: {
         "/resetPassword": (context) => const ResetPassword(),
         "/firstAccess": (context) => const FirstAcess(),
+
+        "/home": (context) => const PetsHome(),
+        "/products": (context) => const Products(),
+        "/users": (context) => const Users(),
       },
       home: Login(),
     );

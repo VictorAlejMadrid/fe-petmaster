@@ -48,7 +48,12 @@ class Login extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.0),
-              AuthButton(text: "ENTRAR", onPressed: () {}),
+              AuthButton(
+                text: "ENTRAR",
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+              ),
               SizedBox(height: 8.0),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(context, "/firstAccess"),
