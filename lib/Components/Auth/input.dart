@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AuthInputText extends StatelessWidget {
-  const AuthInputText({super.key, required this.label, required this.hint});
+  const AuthInputText({
+    super.key,
+    required this.label,
+    required this.hint,
+    required this.controller,
+  });
 
   final String label;
   final String hint;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +28,28 @@ class AuthInputText extends StatelessWidget {
             ),
           ),
         ),
-        AuthTextField(hint: hint),
+        AuthTextField(hint: hint, controller: controller),
       ],
     );
   }
 }
 
 class AuthTextField extends StatelessWidget {
-  const AuthTextField({super.key, required this.hint});
+  const AuthTextField({
+    super.key,
+    required this.hint,
+    required this.controller,
+  });
 
   final String hint;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: Color(0x1AD9D9D9)),
       child: TextField(
+        controller: controller,
         style: TextStyle(color: Colors.white),
         cursorColor: Colors.white,
         cursorWidth: 1.0,
