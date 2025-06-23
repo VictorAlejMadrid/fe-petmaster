@@ -6,10 +6,12 @@ class AuthInputText extends StatelessWidget {
     required this.label,
     required this.hint,
     required this.controller,
+    required this.keyboardType,
   });
 
   final String label;
   final String hint;
+  final TextInputType keyboardType;
   final TextEditingController controller;
 
   @override
@@ -28,7 +30,7 @@ class AuthInputText extends StatelessWidget {
             ),
           ),
         ),
-        AuthTextField(hint: hint, controller: controller),
+        AuthTextField(hint: hint, controller: controller, keyboardType: keyboardType),
       ],
     );
   }
@@ -39,9 +41,11 @@ class AuthTextField extends StatelessWidget {
     super.key,
     required this.hint,
     required this.controller,
+    required this.keyboardType,
   });
 
   final String hint;
+  final TextInputType keyboardType;
   final TextEditingController controller;
 
   @override
@@ -52,6 +56,7 @@ class AuthTextField extends StatelessWidget {
         controller: controller,
         style: TextStyle(color: Colors.white),
         cursorColor: Colors.white,
+        keyboardType: keyboardType,
         cursorWidth: 1.0,
         decoration: InputDecoration(
           hintText: hint,

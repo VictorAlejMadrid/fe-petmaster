@@ -74,12 +74,14 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: 12.0),
                   AuthInputText(
+                    keyboardType: TextInputType.number,
                     label: "Matrícula",
                     hint: "digite seu número de matrícula",
                     controller: _registrationNumberController,
                   ),
                   SizedBox(height: 16.0),
                   AuthInputText(
+                    keyboardType: TextInputType.visiblePassword,
                     label: "Senha",
                     hint: "digite sua senha",
                     controller: _passwordController,

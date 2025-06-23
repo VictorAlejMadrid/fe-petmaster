@@ -75,18 +75,21 @@ class _FirstAcessState extends State<FirstAcess> {
                 ),
                 SizedBox(height: 12.0),
                 AuthInputText(
+                  keyboardType: TextInputType.visiblePassword,
                   label: 'Matrícula',
                   hint: 'digite seu número de matrícula',
                   controller: _registrationNumberController,
                 ),
                 SizedBox(height: 16.0),
                 AuthInputText(
+                  keyboardType: TextInputType.visiblePassword,
                   label: 'Nova senha',
                   hint: 'digite sua nova senha',
                   controller: _newPasswordController,
                 ),
                 SizedBox(height: 16.0),
                 AuthInputText(
+                  keyboardType: TextInputType.visiblePassword,
                   label: 'Confirmar Senha',
                   hint: 'digite novamente sua senha',
                   controller: _confirmPasswordController,

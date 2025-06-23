@@ -31,6 +31,7 @@ class ResetPassword extends StatelessWidget {
               ),
               SizedBox(height: 12.0),
               AuthInputText(
+                keyboardType: TextInputType.visiblePassword,
                 label: "Matrícula",
                 hint: "digite seu número de matrícula",
                 controller: _registrationNumberController,
