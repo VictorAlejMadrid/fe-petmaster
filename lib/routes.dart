@@ -6,4 +6,6 @@ class Routes {
   static const String home = "/home";
   static const String products = "/products";
   static const String users = "/users";
+
+  static const String pets = "/pet";
 }
