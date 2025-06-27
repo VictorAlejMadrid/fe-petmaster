@@ -62,10 +62,13 @@ class AuthService implements AuthServiceImpl {
         "password": password,
       };
 
-      final response = await _client.put(
-        "/login",
-        data: data,
-      );
+      final response = await _client.put("/login", data: data);
+
+      if (response.data is DioException) { 
+        return response.data;
+      } else {
+        _sessionData.name = response.data["data"]["username"];
+      }
 
       return response.data;
     } catch (e) {

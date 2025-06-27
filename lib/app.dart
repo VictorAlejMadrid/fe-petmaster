@@ -6,6 +6,7 @@ import 'package:fe_petmaster/screens/pets.dart';
 import 'package:fe_petmaster/screens/products.dart';
 import 'package:fe_petmaster/screens/users.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,15 +17,16 @@ class App extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      debugShowCheckedModeBanner: false,
       routes: {
         Routes.resetPassword: (context) => ResetPassword(),
-        Routes.firstAccess: (context) => FirstAcess(),
+        Routes.firstAccess: (context) => FirstAcess(authService: context.read()),
 
-        Routes.home: (context) => const PetsHome(),
-        Routes.products: (context) => const Products(),
-        Routes.users: (context) => const Users(),
+        Routes.home: (context) => PetsHome(sessionData: context.read(),),
+        Routes.products: (context) => Products(sessionData: context.read()),
+        Routes.users: (context) => Users(sessionData: context.read()),
       },
-      home: Login(),
+      home: Login(authService: context.read()),
     );
   }
 }

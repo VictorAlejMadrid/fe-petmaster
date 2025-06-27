@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class Product {
   final String id;
   final String name;
@@ -17,9 +19,23 @@ class Product {
     return Product(
       id: json['id'] as String,
       name: json['name'] as String,
-      quantityInStock: json['quantity_in_stock'] as int,
+      quantityInStock: json['quantityInStock'] as int,
       price: (json['price'] as num).toDouble(),
       supplier: json['supplier'] as String,
     );
   }
+
+  Map<String, dynamic> toJson() => <String, dynamic>{
+    'id': id,
+    'name': name,
+    'price': price,
+    'quantityInStock': quantityInStock,
+    'supplier': supplier,
+  };
 }
+
+List<Product> productsResponseFromJsonString(
+  String jsonString,
+) => List<Product>.from(
+  jsonDecode(jsonString).map((json) => Product.fromJson(json)),
+);

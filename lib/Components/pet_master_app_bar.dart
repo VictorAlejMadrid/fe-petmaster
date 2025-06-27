@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PetMasterAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const PetMasterAppBar({super.key});
+  const PetMasterAppBar({super.key, required this.name});
+
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class PetMasterAppBar extends StatelessWidget implements PreferredSizeWidget {
               style: TextStyle(color: Colors.white, fontSize: 12.0),
             ),
             Text(
-              'Victor Madrid',
+              name,
               style: TextStyle(
                 fontFamily: "LeckerliOne",
                 color: Colors.white,
